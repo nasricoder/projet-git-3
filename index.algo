@@ -1,0 +1,38 @@
+FUNCTION scalaire(tab1,tab2: ARRAY_OF INTEGER[]) : BOOLEAN
+VAR
+    sum : INTEGER:=0;
+BEGIN
+    FOR i FROM 1 TO tab1.legth STEP 1  DO
+       sum := sum +tab1[i] * tab2[i]
+    END_FOR
+
+    IF (sum:= 0) THEN
+        RETURN TRUE
+    ELSE
+        RETURN FALSE
+    END_IF
+END
+
+
+ALGORITHM Calcul
+VAR
+    a,b :ARRAY_OF INTEGER [];
+    res : BOOLEAN;
+BEGIN
+    a := [0,2,5];
+    b := [1,4,6];
+
+   IF (a.length <> b.lenght) THEN
+    write ("on ne peut pas calculer le produit scalaire")
+   ELSE
+    res = scalaire(a,b)
+    IF (res = TRUE) THEN
+        Write ("Ortho");
+    ELSE
+        write (" non ortho") ;
+        
+    END_IF
+   END_IF
+
+
+END
